@@ -6,7 +6,7 @@ import java.text.Normalizer;
 import java.util.Scanner;
 
 public class keisanki {
-    private static final Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in,"MS932");
     private static final String ERR = "エラー：不正な値が入力されました";
 
     public static void main(String[] args) {
@@ -23,9 +23,9 @@ public class keisanki {
 
     // 入力を1行読み、全角→半角に変換して前後の空白を除去する
     private static String readLine() {
-        if (!sc.hasNextLine()) System.exit(0);
-        return Normalizer.normalize(sc.nextLine(), Normalizer.Form.NFKC).trim();
-    }
+    if (!sc.hasNextLine()) System.exit(0);
+    return Normalizer.normalize(sc.nextLine(), Normalizer.Form.NFKC).trim();
+}
 
     private static boolean isNumber(String s) {
         return s.matches("-?\\d+(\\.\\d+)?");
